@@ -24,14 +24,14 @@
     .container {
         width: 100%;
         min-height: 28rem;
+        @include center(both);
         @include flex(column, center, center);
         background: rgba(darken($primary_color, 100%), .2);
-        margin-top: 17vh;
         padding: 1rem 0;
-        @include box-shadow(0 5px 80px .1px #000);
+        margin-top: 7rem;
+        @include box-shadow(0 5px 30px .1px #000);
         
         @include max-width(640px){ 
-            margin-top: 0rem;
              background: none;
             @include box-shadow(none);
         }

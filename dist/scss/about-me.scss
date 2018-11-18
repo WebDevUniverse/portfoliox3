@@ -32,7 +32,8 @@
     .container {
         max-width: 100rem;
         margin: 0 auto;
-        margin-top: 19vh;
+        // margin-top: 19vh;
+        @include center(both);
         padding: 1rem;
         text-shadow:0px 6px 16px #000000;
         @include flex(row-reverse, center, center);

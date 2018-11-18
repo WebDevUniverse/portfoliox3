@@ -1,0 +1,71 @@
+$progress-bar-width: 58rem;
+$progress-bar-height: 5rem; 
+
+
+.progress-bar_vs-code {   
+    $progress-value: 80%;
+    $animation-for: vs_code;
+    $progress-theme-color: rgb(13, 85, 255);
+    $progress-background-color: rgba(0, 0, 0, 0.39);
+    $progress-title-color: white;
+        
+
+    margin: .5%;
+    width: $progress-bar-width;
+    height: $progress-bar-height;
+    @include flex(row nowrap, space-between, center);
+    @include box-shadow(0px 0px 3px #000);
+    @include radius(.5rem);
+    overflow: hidden;
+    position: relative;
+    
+    .title{
+        color: $progress-title-color;
+        // width: 20%;
+        height: 100%;
+        @include flex(row, flex-start, center);
+        padding-left: 2%;
+        padding-right: 3%;
+        background-color: $progress-theme-color;
+        @include box-shadow(0px 0px 5px 3px #000);
+        text-shadow: -2px 0 $progress-bar-width / 90 #000;
+        z-index: 3;
+        font-size: $progress-bar-height / 2.2;
+        font-weight: 600;
+    }
+    .progress {
+        width: 10rem;
+        height: 100%;
+        background-color: $progress-background-color;
+        position: absolute;
+        left: 0;
+
+        .inner {
+            @include radius(0 .5rem .5rem 0);
+            background-color: lighten($progress-theme-color, 10%);
+            height: 100%;
+            width: $progress-value;
+            @include box-shadow(1px 0px 3px #000);
+            @include animation($animation-for 4s ease-in-out infinite);
+            
+
+            @include keyframes($animation-for){
+                10%{ background-color: lighten($progress-theme-color, 15%);}
+                20%{ width: $progress-value / 1.01;}
+                
+            }
+        }
+    }
+    .progress-value {
+        color: $progress-title-color;
+        height: 100%;
+        @include flex(row, center, center);
+        span{font-size: 80%; padding-left: 1px; line-height: 0;}
+        z-index: 3;
+        font-weight: 600;
+        padding-right: 2%;
+        font-size: $progress-bar-height / 2.2;
+        text-shadow: -2px 0 $progress-bar-width / 90 #000;
+    }
+
+}

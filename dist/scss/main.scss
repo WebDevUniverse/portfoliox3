@@ -1,0 +1,125 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "menu";
+@import "cube_3d";
+@import "skills";
+@import "progress-circle";
+@import "progress-bar";
+@import "about-me.scss";
+@import "contact-me.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    border: .5px solid grey;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $primary_color;
+    color: $main-text-color;
+    height: 100%;
+    width: 100%; 
+    margin: 0 auto;
+    line-height: 1.5; 
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+
+    &.lg-heading {
+        font-size: 9.6rem;
+        line-height: 1.2;
+        text-shadow:0px 6px 16px #000000;
+    }
+    &.sm-heading {
+        margin-bottom: 1.5rem;
+        padding: 0.5rem 1.6rem 0.5rem 0;
+        text-shadow:0px 6px 16px #000000;
+    }
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+// ------------------------------------------------------- Header
+.main-header {
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 10rem;
+}
+
+.text-secondary {
+    color: $secondary_color;
+}
+
+// --------------------------------------------------------------------- Sections
+#home {
+    background-image: linear-gradient(to right, $primary_color, rgba($primary_color, .9)),
+    url(../imgs/bg-main.jpg);
+    background-position: top;
+    background-size: cover;
+
+    .container {
+        position: relative;
+        width: 85%;
+        margin: 0 auto;
+        height: 100vh;
+        @include flex (column, center, flex-start);
+        @include max-width(769px){
+        @include flex (column, center, center);
+
+        }   
+
+        .lg-heading{
+            @include max-width(1369px){font-size: 8rem;}
+            @include max-width(580px){font-size: 7rem; text-align: center}
+            @include max-width(380px){font-size: 6rem;}
+        }
+        .sm-heading{
+            @include max-width(1369px){font-size: 2rem;}
+            @include max-width(580px){font-size: 1.7rem; text-align: center}
+        }
+
+        .fab{
+            @include max-width(1369px){
+                font-size: 1.5rem;
+                @include size-box(2.5rem);
+            }
+        }
+    }
+}
+
+.icons {
+    @include flex (row nowrap, center, center);        
+
+    a {
+        border: 1px solid transparent;
+        
+        .fab {
+            @include size-box(3rem);
+            @include flex (row nowrap, center, center);
+            font-size: 2rem;
+            text-shadow:0px 6px 16px #000000;
+        }
+
+        &:hover {
+            color: $secondary_color;
+            border-bottom: 1px outset $secondary_color;
+            @include ease-out;
+        }
+    }
+}
+

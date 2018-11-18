@@ -1,0 +1,1582 @@
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                    HTML                                    //
+////////////////////////////////////////////////////////////////////////////////
+.skill-html {
+    $size: 11rem;
+    $my_brand: html5;
+    $border_color: #e34e24;
+    $skill_percent: 85;
+    $border_size: $size / 12;
+    $border_back_color: #333333;
+    
+    $generated_animation_deg25: none;
+    $generated_animation_deg50: none;
+    $generated_animation_deg75: none;
+    $generated_animation_deg100: none;
+
+    @mixin animate_degrees ($my_brand) {
+        @if $skill_percent < 25 {
+            $generated_animation_deg25: $my_brand;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 50 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: $my_brand;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 75 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: $my_brand;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 100 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: $my_brand;
+        }
+    }
+    @include animate_degrees ($my_brand);
+
+    $to_25: 0;
+    $to_50: 0;
+    $to_75: 0;
+    $to_100: 0;  
+
+    @mixin  precent ($val) {
+        @if $val <= 25 {
+            $to_25: $val;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 50 {
+            $to_25: 25;
+            $to_50: $val;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 75 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: $val;
+            $to_100: 0; 
+        }
+        @else if $val <= 100 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: 75;
+            $to_100: $val;
+        }
+        @else {
+            $to_25: 0;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0;
+        }
+    }
+
+    @include precent ($skill_percent);
+    
+    $deg25: 360 / 100 * $to_25;  
+    $deg50: 360 / 100 * $to_50;  
+    $deg75: 360 / 100 * $to_75;  
+    $deg100: 360 / 100 * $to_100; 
+
+    
+    $active25: none;
+    $active50: none;
+    $active75: none;
+    $active100: none;
+
+    @if $to_25 < 25 {
+        $active25: $border_color;
+        $active50: $border_back_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_50 < 50 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_75 < 75{
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_100 < 100 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_color;
+    }
+
+
+//-----------------------------Styling Start Here 
+@include size-box ($size);
+position: relative;
+margin: 1%;
+
+.title {
+        @include center (both);
+        color: lighten($border_color, 20%);
+        text-align-last: center;
+        line-height: 1.2;
+        font-size: $border_size * 1.6;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-shadow: -2px 3px 3px #000;
+        margin-left: 3%;
+        @include animation (title_color 2s linear infinite);
+        @include keyframes (title_color){
+            90%{color: lighten($border_back_color, 30%)}
+        }
+        span {
+            font-size: $border_size * 1.5;
+            font-weight: 400;
+            font-style: italic;
+            color: darken($secondary_color, 5%);
+            letter-spacing: .1px;
+            text-shadow: -2px 3px 3px #000;
+        }
+    }
+    .back {
+        @include size-box ($size);
+        @include radius (100%);
+        border: $border_size solid $border_back_color;
+        position: relative;
+        @include transform (rotate(-45deg));
+        @include box-shadow (0px 0px 10px 1px black);
+
+        .to_25,
+        .to_50,
+        .to_75,
+        .to_100 {
+            @include size-box ($size);
+            @include radius (100%);
+            position: absolute;
+            top: -$border_size;
+            left: -$border_size;
+            border: $border_size solid transparent;
+        }
+        
+        .to_25 {
+            border-top: $border_size solid $active25;
+            @include transform (rotate($deg25+deg));
+            @include animation ($generated_animation_deg25 2s linear infinite);
+            @include keyframes ($generated_animation_deg25) {90%{@include transform (rotate(($deg25 - 8)+deg));}}
+        }
+        .to_50 {
+            border-top: $border_size solid $active50;
+            @include transform (rotate($deg50+deg));
+            @include box-shadow (0px 0px 10px 5px inset black);
+            @include animation ($generated_animation_deg50 2s linear infinite);
+            @include keyframes ($generated_animation_deg50) {90%{@include transform (rotate(($deg50 - 8)+deg));}}
+        }
+        .to_75 {
+            border-top: $border_size solid $active75;
+            @include transform (rotate($deg75+deg));
+            @include animation ($generated_animation_deg75 2s linear infinite);
+            @include keyframes ($generated_animation_deg75) {90%{@include transform (rotate(($deg75 - 8)+deg));}}
+        }
+        .to_100 {
+            border-top: $border_size solid $active100;
+            @include transform (rotate($deg100+deg));
+            @include animation ($generated_animation_deg100 2s linear infinite);
+            @include keyframes ($generated_animation_deg100) {90%{@include transform (rotate(($deg100 - 8)+deg));}}
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                    CSS3                                    //
+////////////////////////////////////////////////////////////////////////////////
+.skill-css {
+    $size: 11rem;
+    $my_brand: csss;
+    $border_color: #1173bc;
+    $skill_percent: 87;
+    $border_size: $size / 12;
+    $border_back_color: #333333;
+    
+    $generated_animation_deg25: none;
+    $generated_animation_deg50: none;
+    $generated_animation_deg75: none;
+    $generated_animation_deg100: none;
+
+    @mixin animate_degrees ($my_brand) {
+        @if $skill_percent < 25 {
+            $generated_animation_deg25: $my_brand;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 50 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: $my_brand;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 75 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: $my_brand;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 100 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: $my_brand;
+        }
+    }
+    @include animate_degrees ($my_brand);
+
+    $to_25: 0;
+    $to_50: 0;
+    $to_75: 0;
+    $to_100: 0;  
+
+    @mixin  precent ($val) {
+        @if $val <= 25 {
+            $to_25: $val;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 50 {
+            $to_25: 25;
+            $to_50: $val;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 75 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: $val;
+            $to_100: 0; 
+        }
+        @else if $val <= 100 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: 75;
+            $to_100: $val;
+        }
+        @else {
+            $to_25: 0;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0;
+        }
+    }
+
+    @include precent ($skill_percent);
+    
+    $deg25: 360 / 100 * $to_25;  
+    $deg50: 360 / 100 * $to_50;  
+    $deg75: 360 / 100 * $to_75;  
+    $deg100: 360 / 100 * $to_100; 
+
+    
+    $active25: none;
+    $active50: none;
+    $active75: none;
+    $active100: none;
+
+    @if $to_25 < 25 {
+        $active25: $border_color;
+        $active50: $border_back_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_50 < 50 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_75 < 75{
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_100 < 100 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_color;
+    }
+
+
+//-----------------------------Styling Start Here 
+@include size-box ($size);
+position: relative;
+margin: 1%;
+
+.title {
+        @include center (both);
+        color: lighten($border_color, 20%);
+        text-align-last: center;
+        line-height: 1.2;
+        font-size: $border_size * 1.6;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-shadow: -2px 3px 3px #000;
+        margin-left: 3%;
+        @include animation (title_color 2s linear infinite);
+        @include keyframes (title_color){
+            90%{color: lighten($border_back_color, 30%)}
+        }
+        span {
+            font-size: $border_size * 1.5;
+            font-weight: 400;
+            font-style: italic;
+            color: darken($secondary_color, 5%);
+            letter-spacing: .1px;
+            text-shadow: -2px 3px 3px #000;
+        }
+    }
+    .back {
+        @include size-box ($size);
+        @include radius (100%);
+        border: $border_size solid $border_back_color;
+        position: relative;
+        @include transform (rotate(-45deg));
+        @include box-shadow (0px 0px 10px 1px black);
+
+        .to_25,
+        .to_50,
+        .to_75,
+        .to_100 {
+            @include size-box ($size);
+            @include radius (100%);
+            position: absolute;
+            top: -$border_size;
+            left: -$border_size;
+            border: $border_size solid transparent;
+        }
+        
+        .to_25 {
+            border-top: $border_size solid $active25;
+            @include transform (rotate($deg25+deg));
+            @include animation ($generated_animation_deg25 2s linear infinite);
+            @include keyframes ($generated_animation_deg25) {90%{@include transform (rotate(($deg25 - 8)+deg));}}
+        }
+        .to_50 {
+            border-top: $border_size solid $active50;
+            @include transform (rotate($deg50+deg));
+            @include box-shadow (0px 0px 10px 5px inset black);
+            @include animation ($generated_animation_deg50 2s linear infinite);
+            @include keyframes ($generated_animation_deg50) {90%{@include transform (rotate(($deg50 - 8)+deg));}}
+        }
+        .to_75 {
+            border-top: $border_size solid $active75;
+            @include transform (rotate($deg75+deg));
+            @include animation ($generated_animation_deg75 2s linear infinite);
+            @include keyframes ($generated_animation_deg75) {90%{@include transform (rotate(($deg75 - 8)+deg));}}
+        }
+        .to_100 {
+            border-top: $border_size solid $active100;
+            @include transform (rotate($deg100+deg));
+            @include animation ($generated_animation_deg100 2s linear infinite);
+            @include keyframes ($generated_animation_deg100) {90%{@include transform (rotate(($deg100 - 8)+deg));}}
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//                                    JS                                    //
+////////////////////////////////////////////////////////////////////////////////
+.skill-js {
+    $size: 11rem;
+    $my_brand: jss;
+    $border_color: #20a869;
+    $skill_percent: 87;
+    $border_size: $size / 12;
+    $border_back_color: #333333;
+    
+    $generated_animation_deg25: none;
+    $generated_animation_deg50: none;
+    $generated_animation_deg75: none;
+    $generated_animation_deg100: none;
+
+    @mixin animate_degrees ($my_brand) {
+        @if $skill_percent < 25 {
+            $generated_animation_deg25: $my_brand;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 50 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: $my_brand;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 75 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: $my_brand;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 100 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: $my_brand;
+        }
+    }
+    @include animate_degrees ($my_brand);
+
+    $to_25: 0;
+    $to_50: 0;
+    $to_75: 0;
+    $to_100: 0;  
+
+    @mixin  precent ($val) {
+        @if $val <= 25 {
+            $to_25: $val;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 50 {
+            $to_25: 25;
+            $to_50: $val;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 75 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: $val;
+            $to_100: 0; 
+        }
+        @else if $val <= 100 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: 75;
+            $to_100: $val;
+        }
+        @else {
+            $to_25: 0;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0;
+        }
+    }
+
+    @include precent ($skill_percent);
+    
+    $deg25: 360 / 100 * $to_25;  
+    $deg50: 360 / 100 * $to_50;  
+    $deg75: 360 / 100 * $to_75;  
+    $deg100: 360 / 100 * $to_100; 
+
+    
+    $active25: none;
+    $active50: none;
+    $active75: none;
+    $active100: none;
+
+    @if $to_25 < 25 {
+        $active25: $border_color;
+        $active50: $border_back_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_50 < 50 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_75 < 75{
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_100 < 100 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_color;
+    }
+
+
+//-----------------------------Styling Start Here 
+@include size-box ($size);
+position: relative;
+margin: 1%;
+
+.title {
+        @include center (both);
+        color: lighten($border_color, 20%);
+        text-align-last: center;
+        line-height: 1.2;
+        font-size: $border_size * 1.6;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-shadow: -2px 3px 3px #000;
+        margin-left: 3%;
+        @include animation (title_color 2s linear infinite);
+        @include keyframes (title_color){
+            90%{color: lighten($border_back_color, 30%)}
+        }
+        span {
+            font-size: $border_size * 1.5;
+            font-weight: 400;
+            font-style: italic;
+            color: darken($secondary_color, 5%);
+            letter-spacing: .1px;
+            text-shadow: -2px 3px 3px #000;
+        }
+    }
+    .back {
+        @include size-box ($size);
+        @include radius (100%);
+        border: $border_size solid $border_back_color;
+        position: relative;
+        @include transform (rotate(-45deg));
+        @include box-shadow (0px 0px 10px 1px black);
+
+        .to_25,
+        .to_50,
+        .to_75,
+        .to_100 {
+            @include size-box ($size);
+            @include radius (100%);
+            position: absolute;
+            top: -$border_size;
+            left: -$border_size;
+            border: $border_size solid transparent;
+        }
+        
+        .to_25 {
+            border-top: $border_size solid $active25;
+            @include transform (rotate($deg25+deg));
+            @include animation ($generated_animation_deg25 2s linear infinite);
+            @include keyframes ($generated_animation_deg25) {90%{@include transform (rotate(($deg25 - 8)+deg));}}
+        }
+        .to_50 {
+            border-top: $border_size solid $active50;
+            @include transform (rotate($deg50+deg));
+            @include box-shadow (0px 0px 10px 5px inset black);
+            @include animation ($generated_animation_deg50 2s linear infinite);
+            @include keyframes ($generated_animation_deg50) {90%{@include transform (rotate(($deg50 - 8)+deg));}}
+        }
+        .to_75 {
+            border-top: $border_size solid $active75;
+            @include transform (rotate($deg75+deg));
+            @include animation ($generated_animation_deg75 2s linear infinite);
+            @include keyframes ($generated_animation_deg75) {90%{@include transform (rotate(($deg75 - 8)+deg));}}
+        }
+        .to_100 {
+            border-top: $border_size solid $active100;
+            @include transform (rotate($deg100+deg));
+            @include animation ($generated_animation_deg100 2s linear infinite);
+            @include keyframes ($generated_animation_deg100) {90%{@include transform (rotate(($deg100 - 8)+deg));}}
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                    SASS                                    //
+////////////////////////////////////////////////////////////////////////////////
+.skill-sass {
+    $size: 11rem;
+    $my_brand: sasss;
+    $border_color: deeppink;
+    $skill_percent: 92;
+    $border_size: $size / 12;
+    $border_back_color: #333333;
+    
+    $generated_animation_deg25: none;
+    $generated_animation_deg50: none;
+    $generated_animation_deg75: none;
+    $generated_animation_deg100: none;
+
+    @mixin animate_degrees ($my_brand) {
+        @if $skill_percent < 25 {
+            $generated_animation_deg25: $my_brand;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 50 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: $my_brand;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 75 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: $my_brand;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 100 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: $my_brand;
+        }
+    }
+    @include animate_degrees ($my_brand);
+
+    $to_25: 0;
+    $to_50: 0;
+    $to_75: 0;
+    $to_100: 0;  
+
+    @mixin  precent ($val) {
+        @if $val <= 25 {
+            $to_25: $val;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 50 {
+            $to_25: 25;
+            $to_50: $val;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 75 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: $val;
+            $to_100: 0; 
+        }
+        @else if $val <= 100 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: 75;
+            $to_100: $val;
+        }
+        @else {
+            $to_25: 0;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0;
+        }
+    }
+
+    @include precent ($skill_percent);
+    
+    $deg25: 360 / 100 * $to_25;  
+    $deg50: 360 / 100 * $to_50;  
+    $deg75: 360 / 100 * $to_75;  
+    $deg100: 360 / 100 * $to_100; 
+
+    
+    $active25: none;
+    $active50: none;
+    $active75: none;
+    $active100: none;
+
+    @if $to_25 < 25 {
+        $active25: $border_color;
+        $active50: $border_back_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_50 < 50 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_75 < 75{
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_100 < 100 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_color;
+    }
+
+
+//-----------------------------Styling Start Here 
+@include size-box ($size);
+position: relative;
+margin: 1%;
+
+.title {
+        @include center (both);
+        color: lighten($border_color, 20%);
+        text-align-last: center;
+        line-height: 1.2;
+        font-size: $border_size * 1.6;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-shadow: -2px 3px 3px #000;
+        margin-left: 3%;
+        @include animation (title_color 2s linear infinite);
+        @include keyframes (title_color){
+            90%{color: lighten($border_back_color, 30%)}
+        }
+        span {
+            font-size: $border_size * 1.5;
+            font-weight: 400;
+            font-style: italic;
+            color: darken($secondary_color, 5%);
+            letter-spacing: .1px;
+            text-shadow: -2px 3px 3px #000;
+        }
+    }
+    .back {
+        @include size-box ($size);
+        @include radius (100%);
+        border: $border_size solid $border_back_color;
+        position: relative;
+        @include transform (rotate(-45deg));
+        @include box-shadow (0px 0px 10px 1px black);
+
+        .to_25,
+        .to_50,
+        .to_75,
+        .to_100 {
+            @include size-box ($size);
+            @include radius (100%);
+            position: absolute;
+            top: -$border_size;
+            left: -$border_size;
+            border: $border_size solid transparent;
+        }
+        
+        .to_25 {
+            border-top: $border_size solid $active25;
+            @include transform (rotate($deg25+deg));
+            @include animation ($generated_animation_deg25 2s linear infinite);
+            @include keyframes ($generated_animation_deg25) {90%{@include transform (rotate(($deg25 - 8)+deg));}}
+        }
+        .to_50 {
+            border-top: $border_size solid $active50;
+            @include transform (rotate($deg50+deg));
+            @include box-shadow (0px 0px 10px 5px inset black);
+            @include animation ($generated_animation_deg50 2s linear infinite);
+            @include keyframes ($generated_animation_deg50) {90%{@include transform (rotate(($deg50 - 8)+deg));}}
+        }
+        .to_75 {
+            border-top: $border_size solid $active75;
+            @include transform (rotate($deg75+deg));
+            @include animation ($generated_animation_deg75 2s linear infinite);
+            @include keyframes ($generated_animation_deg75) {90%{@include transform (rotate(($deg75 - 8)+deg));}}
+        }
+        .to_100 {
+            border-top: $border_size solid $active100;
+            @include transform (rotate($deg100+deg));
+            @include animation ($generated_animation_deg100 2s linear infinite);
+            @include keyframes ($generated_animation_deg100) {90%{@include transform (rotate(($deg100 - 8)+deg));}}
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                    NODE                                    //
+////////////////////////////////////////////////////////////////////////////////
+.skill-node {
+    $size: 11rem;
+    $my_brand: nodee;
+    $border_color: #009b00;
+    $skill_percent: 33;
+    $border_size: $size / 12;
+    $border_back_color: #333333;
+    
+    $generated_animation_deg25: none;
+    $generated_animation_deg50: none;
+    $generated_animation_deg75: none;
+    $generated_animation_deg100: none;
+
+    @mixin animate_degrees ($my_brand) {
+        @if $skill_percent < 25 {
+            $generated_animation_deg25: $my_brand;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 50 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: $my_brand;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 75 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: $my_brand;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 100 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: $my_brand;
+        }
+    }
+    @include animate_degrees ($my_brand);
+
+    $to_25: 0;
+    $to_50: 0;
+    $to_75: 0;
+    $to_100: 0;  
+
+    @mixin  precent ($val) {
+        @if $val <= 25 {
+            $to_25: $val;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 50 {
+            $to_25: 25;
+            $to_50: $val;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 75 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: $val;
+            $to_100: 0; 
+        }
+        @else if $val <= 100 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: 75;
+            $to_100: $val;
+        }
+        @else {
+            $to_25: 0;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0;
+        }
+    }
+
+    @include precent ($skill_percent);
+    
+    $deg25: 360 / 100 * $to_25;  
+    $deg50: 360 / 100 * $to_50;  
+    $deg75: 360 / 100 * $to_75;  
+    $deg100: 360 / 100 * $to_100; 
+
+    
+    $active25: none;
+    $active50: none;
+    $active75: none;
+    $active100: none;
+
+    @if $to_25 < 25 {
+        $active25: $border_color;
+        $active50: $border_back_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_50 < 50 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_75 < 75{
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_100 < 100 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_color;
+    }
+
+
+//-----------------------------Styling Start Here 
+@include size-box ($size);
+position: relative;
+margin: 1%;
+
+.title {
+        @include center (both);
+        color: lighten($border_color, 20%);
+        text-align-last: center;
+        line-height: 1.2;
+        font-size: $border_size * 1.6;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-shadow: -2px 3px 3px #000;
+        margin-left: 3%;
+        @include animation (title_color 2s linear infinite);
+        @include keyframes (title_color){
+            90%{color: lighten($border_back_color, 30%)}
+        }
+        span {
+            font-size: $border_size * 1.5;
+            font-weight: 400;
+            font-style: italic;
+            color: darken($secondary_color, 5%);
+            letter-spacing: .1px;
+            text-shadow: -2px 3px 3px #000;
+        }
+    }
+    .back {
+        @include size-box ($size);
+        @include radius (100%);
+        border: $border_size solid $border_back_color;
+        position: relative;
+        @include transform (rotate(-45deg));
+        @include box-shadow (0px 0px 10px 1px black);
+
+        .to_25,
+        .to_50,
+        .to_75,
+        .to_100 {
+            @include size-box ($size);
+            @include radius (100%);
+            position: absolute;
+            top: -$border_size;
+            left: -$border_size;
+            border: $border_size solid transparent;
+        }
+        
+        .to_25 {
+            border-top: $border_size solid $active25;
+            @include transform (rotate($deg25+deg));
+            @include animation ($generated_animation_deg25 2s linear infinite);
+            @include keyframes ($generated_animation_deg25) {90%{@include transform (rotate(($deg25 - 8)+deg));}}
+        }
+        .to_50 {
+            border-top: $border_size solid $active50;
+            @include transform (rotate($deg50+deg));
+            @include box-shadow (0px 0px 10px 5px inset black);
+            @include animation ($generated_animation_deg50 2s linear infinite);
+            @include keyframes ($generated_animation_deg50) {90%{@include transform (rotate(($deg50 - 8)+deg));}}
+        }
+        .to_75 {
+            border-top: $border_size solid $active75;
+            @include transform (rotate($deg75+deg));
+            @include animation ($generated_animation_deg75 2s linear infinite);
+            @include keyframes ($generated_animation_deg75) {90%{@include transform (rotate(($deg75 - 8)+deg));}}
+        }
+        .to_100 {
+            border-top: $border_size solid $active100;
+            @include transform (rotate($deg100+deg));
+            @include animation ($generated_animation_deg100 2s linear infinite);
+            @include keyframes ($generated_animation_deg100) {90%{@include transform (rotate(($deg100 - 8)+deg));}}
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                    GITHUB                                  //
+////////////////////////////////////////////////////////////////////////////////
+.skill-git {
+    $size: 11rem;
+    $my_brand: gitt;
+    $border_color: #b604b6;
+    $skill_percent: 51;
+    $border_size: $size / 12;
+    $border_back_color: #333333;
+    
+    $generated_animation_deg25: none;
+    $generated_animation_deg50: none;
+    $generated_animation_deg75: none;
+    $generated_animation_deg100: none;
+
+    @mixin animate_degrees ($my_brand) {
+        @if $skill_percent < 25 {
+            $generated_animation_deg25: $my_brand;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 50 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: $my_brand;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 75 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: $my_brand;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 100 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: $my_brand;
+        }
+    }
+    @include animate_degrees ($my_brand);
+
+    $to_25: 0;
+    $to_50: 0;
+    $to_75: 0;
+    $to_100: 0;  
+
+    @mixin  precent ($val) {
+        @if $val <= 25 {
+            $to_25: $val;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 50 {
+            $to_25: 25;
+            $to_50: $val;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 75 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: $val;
+            $to_100: 0; 
+        }
+        @else if $val <= 100 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: 75;
+            $to_100: $val;
+        }
+        @else {
+            $to_25: 0;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0;
+        }
+    }
+
+    @include precent ($skill_percent);
+    
+    $deg25: 360 / 100 * $to_25;  
+    $deg50: 360 / 100 * $to_50;  
+    $deg75: 360 / 100 * $to_75;  
+    $deg100: 360 / 100 * $to_100; 
+
+    
+    $active25: none;
+    $active50: none;
+    $active75: none;
+    $active100: none;
+
+    @if $to_25 < 25 {
+        $active25: $border_color;
+        $active50: $border_back_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_50 < 50 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_75 < 75{
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_100 < 100 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_color;
+    }
+
+
+//-----------------------------Styling Start Here 
+@include size-box ($size);
+position: relative;
+margin: 1%;
+
+.title {
+        @include center (both);
+        color: lighten($border_color, 20%);
+        text-align-last: center;
+        line-height: 1.2;
+        font-size: $border_size * 1.6;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-shadow: -2px 3px 3px #000;
+        margin-left: 3%;
+        @include animation (title_color 2s linear infinite);
+        @include keyframes (title_color){
+            90%{color: lighten($border_back_color, 30%)}
+        }
+        span {
+            font-size: $border_size * 1.5;
+            font-weight: 400;
+            font-style: italic;
+            color: darken($secondary_color, 5%);
+            letter-spacing: .1px;
+            text-shadow: -2px 3px 3px #000;
+        }
+    }
+    .back {
+        @include size-box ($size);
+        @include radius (100%);
+        border: $border_size solid $border_back_color;
+        position: relative;
+        @include transform (rotate(-45deg));
+        @include box-shadow (0px 0px 10px 1px black);
+
+        .to_25,
+        .to_50,
+        .to_75,
+        .to_100 {
+            @include size-box ($size);
+            @include radius (100%);
+            position: absolute;
+            top: -$border_size;
+            left: -$border_size;
+            border: $border_size solid transparent;
+        }
+        
+        .to_25 {
+            border-top: $border_size solid $active25;
+            @include transform (rotate($deg25+deg));
+            @include animation ($generated_animation_deg25 2s linear infinite);
+            @include keyframes ($generated_animation_deg25) {90%{@include transform (rotate(($deg25 - 8)+deg));}}
+        }
+        .to_50 {
+            border-top: $border_size solid $active50;
+            @include transform (rotate($deg50+deg));
+            @include box-shadow (0px 0px 10px 5px inset black);
+            @include animation ($generated_animation_deg50 2s linear infinite);
+            @include keyframes ($generated_animation_deg50) {90%{@include transform (rotate(($deg50 - 8)+deg));}}
+        }
+        .to_75 {
+            border-top: $border_size solid $active75;
+            @include transform (rotate($deg75+deg));
+            @include animation ($generated_animation_deg75 2s linear infinite);
+            @include keyframes ($generated_animation_deg75) {90%{@include transform (rotate(($deg75 - 8)+deg));}}
+        }
+        .to_100 {
+            border-top: $border_size solid $active100;
+            @include transform (rotate($deg100+deg));
+            @include animation ($generated_animation_deg100 2s linear infinite);
+            @include keyframes ($generated_animation_deg100) {90%{@include transform (rotate(($deg100 - 8)+deg));}}
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//                                    JQuery                                    //
+////////////////////////////////////////////////////////////////////////////////
+.skill-jquery {
+    $size: 11rem;
+    $my_brand: jqueryy;
+    $border_color: #0c82b1;
+    $skill_percent: 21;
+    $border_size: $size / 12;
+    $border_back_color: #333333;
+    
+    $generated_animation_deg25: none;
+    $generated_animation_deg50: none;
+    $generated_animation_deg75: none;
+    $generated_animation_deg100: none;
+
+    @mixin animate_degrees ($my_brand) {
+        @if $skill_percent < 25 {
+            $generated_animation_deg25: $my_brand;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 50 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: $my_brand;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 75 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: $my_brand;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 100 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: $my_brand;
+        }
+    }
+    @include animate_degrees ($my_brand);
+
+    $to_25: 0;
+    $to_50: 0;
+    $to_75: 0;
+    $to_100: 0;  
+
+    @mixin  precent ($val) {
+        @if $val <= 25 {
+            $to_25: $val;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 50 {
+            $to_25: 25;
+            $to_50: $val;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 75 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: $val;
+            $to_100: 0; 
+        }
+        @else if $val <= 100 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: 75;
+            $to_100: $val;
+        }
+        @else {
+            $to_25: 0;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0;
+        }
+    }
+
+    @include precent ($skill_percent);
+    
+    $deg25: 360 / 100 * $to_25;  
+    $deg50: 360 / 100 * $to_50;  
+    $deg75: 360 / 100 * $to_75;  
+    $deg100: 360 / 100 * $to_100; 
+
+    
+    $active25: none;
+    $active50: none;
+    $active75: none;
+    $active100: none;
+
+    @if $to_25 < 25 {
+        $active25: $border_color;
+        $active50: $border_back_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_50 < 50 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_75 < 75{
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_100 < 100 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_color;
+    }
+
+
+//-----------------------------Styling Start Here 
+@include size-box ($size);
+position: relative;
+margin: 1%;
+
+.title {
+        @include center (both);
+        color: lighten($border_color, 20%);
+        text-align-last: center;
+        line-height: 1.2;
+        font-size: $border_size * 1.6;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-shadow: -2px 3px 3px #000;
+        margin-left: 3%;
+        @include animation (title_color 2s linear infinite);
+        @include keyframes (title_color){
+            90%{color: lighten($border_back_color, 30%)}
+        }
+        span {
+            font-size: $border_size * 1.5;
+            font-weight: 400;
+            font-style: italic;
+            color: darken($secondary_color, 5%);
+            letter-spacing: .1px;
+            text-shadow: -2px 3px 3px #000;
+        }
+    }
+    .back {
+        @include size-box ($size);
+        @include radius (100%);
+        border: $border_size solid $border_back_color;
+        position: relative;
+        @include transform (rotate(-45deg));
+        @include box-shadow (0px 0px 10px 1px black);
+
+        .to_25,
+        .to_50,
+        .to_75,
+        .to_100 {
+            @include size-box ($size);
+            @include radius (100%);
+            position: absolute;
+            top: -$border_size;
+            left: -$border_size;
+            border: $border_size solid transparent;
+        }
+        
+        .to_25 {
+            border-top: $border_size solid $active25;
+            @include transform (rotate($deg25+deg));
+            @include animation ($generated_animation_deg25 2s linear infinite);
+            @include keyframes ($generated_animation_deg25) {90%{@include transform (rotate(($deg25 - 8)+deg));}}
+        }
+        .to_50 {
+            border-top: $border_size solid $active50;
+            @include transform (rotate($deg50+deg));
+            @include box-shadow (0px 0px 10px 5px inset black);
+            @include animation ($generated_animation_deg50 2s linear infinite);
+            @include keyframes ($generated_animation_deg50) {90%{@include transform (rotate(($deg50 - 8)+deg));}}
+        }
+        .to_75 {
+            border-top: $border_size solid $active75;
+            @include transform (rotate($deg75+deg));
+            @include animation ($generated_animation_deg75 2s linear infinite);
+            @include keyframes ($generated_animation_deg75) {90%{@include transform (rotate(($deg75 - 8)+deg));}}
+        }
+        .to_100 {
+            border-top: $border_size solid $active100;
+            @include transform (rotate($deg100+deg));
+            @include animation ($generated_animation_deg100 2s linear infinite);
+            @include keyframes ($generated_animation_deg100) {90%{@include transform (rotate(($deg100 - 8)+deg));}}
+        }
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                    PHP                                    //
+////////////////////////////////////////////////////////////////////////////////
+.skill-php {
+    $size: 11rem;
+    $my_brand: phpp;
+    $border_color: #cc3a0e;
+    $skill_percent: 3;
+    $border_size: $size / 12;
+    $border_back_color: #333333;
+    
+    $generated_animation_deg25: none;
+    $generated_animation_deg50: none;
+    $generated_animation_deg75: none;
+    $generated_animation_deg100: none;
+
+    @mixin animate_degrees ($my_brand) {
+        @if $skill_percent < 25 {
+            $generated_animation_deg25: $my_brand;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 50 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: $my_brand;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 75 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: $my_brand;
+            $generated_animation_deg100: none;
+        }
+        @else if $skill_percent < 100 {
+            $generated_animation_deg25: none;
+            $generated_animation_deg50: none;
+            $generated_animation_deg75: none;
+            $generated_animation_deg100: $my_brand;
+        }
+    }
+    @include animate_degrees ($my_brand);
+
+    $to_25: 0;
+    $to_50: 0;
+    $to_75: 0;
+    $to_100: 0;  
+
+    @mixin  precent ($val) {
+        @if $val <= 25 {
+            $to_25: $val;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 50 {
+            $to_25: 25;
+            $to_50: $val;
+            $to_75: 0;
+            $to_100: 0; 
+        }
+        @else if $val <= 75 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: $val;
+            $to_100: 0; 
+        }
+        @else if $val <= 100 {
+            $to_25: 25;
+            $to_50: 50;
+            $to_75: 75;
+            $to_100: $val;
+        }
+        @else {
+            $to_25: 0;
+            $to_50: 0;
+            $to_75: 0;
+            $to_100: 0;
+        }
+    }
+
+    @include precent ($skill_percent);
+    
+    $deg25: 360 / 100 * $to_25;  
+    $deg50: 360 / 100 * $to_50;  
+    $deg75: 360 / 100 * $to_75;  
+    $deg100: 360 / 100 * $to_100; 
+
+    
+    $active25: none;
+    $active50: none;
+    $active75: none;
+    $active100: none;
+
+    @if $to_25 < 25 {
+        $active25: $border_color;
+        $active50: $border_back_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_50 < 50 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_back_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_75 < 75{
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_back_color;
+    }
+    @else if $to_100 < 100 {
+        $active25: $border_color;
+        $active50: $border_color;
+        $active75: $border_color;
+        $active100: $border_color;
+    }
+
+
+//-----------------------------Styling Start Here 
+@include size-box ($size);
+position: relative;
+margin: 1%;
+
+.title {
+        @include center (both);
+        color: lighten($border_color, 20%);
+        text-align-last: center;
+        line-height: 1.2;
+        font-size: $border_size * 1.6;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-shadow: -2px 3px 3px #000;
+        margin-left: 3%;
+        @include animation (title_color 2s linear infinite);
+        @include keyframes (title_color){
+            90%{color: lighten($border_back_color, 30%)}
+        }
+        span {
+            font-size: $border_size * 1.5;
+            font-weight: 400;
+            font-style: italic;
+            color: darken($secondary_color, 5%);
+            letter-spacing: .1px;
+            text-shadow: -2px 3px 3px #000;
+        }
+    }
+    .back {
+        @include size-box ($size);
+        @include radius (100%);
+        border: $border_size solid $border_back_color;
+        position: relative;
+        @include transform (rotate(-45deg));
+        @include box-shadow (0px 0px 10px 1px black);
+
+        .to_25,
+        .to_50,
+        .to_75,
+        .to_100 {
+            @include size-box ($size);
+            @include radius (100%);
+            position: absolute;
+            top: -$border_size;
+            left: -$border_size;
+            border: $border_size solid transparent;
+        }
+        
+        .to_25 {
+            border-top: $border_size solid $active25;
+            @include transform (rotate($deg25+deg));
+            @include animation ($generated_animation_deg25 2s linear infinite);
+            @include keyframes ($generated_animation_deg25) {90%{@include transform (rotate(($deg25 - 8)+deg));}}
+        }
+        .to_50 {
+            border-top: $border_size solid $active50;
+            @include transform (rotate($deg50+deg));
+            @include box-shadow (0px 0px 10px 5px inset black);
+            @include animation ($generated_animation_deg50 2s linear infinite);
+            @include keyframes ($generated_animation_deg50) {90%{@include transform (rotate(($deg50 - 8)+deg));}}
+        }
+        .to_75 {
+            border-top: $border_size solid $active75;
+            @include transform (rotate($deg75+deg));
+            @include animation ($generated_animation_deg75 2s linear infinite);
+            @include keyframes ($generated_animation_deg75) {90%{@include transform (rotate(($deg75 - 8)+deg));}}
+        }
+        .to_100 {
+            border-top: $border_size solid $active100;
+            @include transform (rotate($deg100+deg));
+            @include animation ($generated_animation_deg100 2s linear infinite);
+            @include keyframes ($generated_animation_deg100) {90%{@include transform (rotate(($deg100 - 8)+deg));}}
+        }
+    }
+}

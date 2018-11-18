@@ -1,0 +1,75 @@
+#contact-me {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, $primary_color, rgba($primary_color, .7)),
+    url(../imgs/bg-contact.jpg);
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+
+    .lg-heading {
+        font-size: 9rem;
+        padding-left: 5%;
+        padding-top: 7rem;
+        @include max-width(1369px){font-size: 8rem;}
+        @include max-width(580px){font-size: 7rem; text-align: center}
+        @include max-width(380px){font-size: 6rem;}
+    }
+    .sm-heading {
+        padding-left: 5.1%;
+        @include max-width(1369px){font-size: 2rem;}
+        @include max-width(580px){font-size: 1.7rem; text-align: center}
+    }
+
+    .container {
+        width: 100%;
+        min-height: 28rem;
+        @include flex(column, center, center);
+        background: rgba(darken($primary_color, 100%), .2);
+        margin-top: 17vh;
+        padding: 1rem 0;
+        @include box-shadow(0 5px 80px .1px #000);
+        
+        @include max-width(640px){ 
+            margin-top: 0rem;
+             background: none;
+            @include box-shadow(none);
+        }
+
+        .row {
+            @include flex(row);
+            width: 60rem;
+            margin: 0 auto;
+
+            @include max-width(640px){
+                @include flex(column, center, center);
+                width: auto;
+                margin-bottom: 2rem;
+                text-align: center;
+                padding: 0 1rem;
+            
+            }
+            
+            .fas, .far, .fab {
+                @include size-box(5rem);
+                @include flex(row, center, center);
+                font-size: 180%;
+                @include max-width(480px){ font-size: 2.4rem; @include size-box(3rem);}
+                color: $secondary_color;
+                @include ease-out-duration(300ms);             
+            }
+            .cell-number, .address, .email, .git {
+                font-size: 2.5rem;
+                @include max-width(640px){ font-size: 2.2rem; letter-spacing: .5px; padding: 0; }
+                @include max-width(480px){ font-size: 1.8rem; }
+                font-weight: 300;
+                letter-spacing: 1px;
+                color: $main-text-color;
+                padding-left: 2%;
+            }
+            .git {
+                color: $secondary_color;
+            }
+        }
+    }
+}

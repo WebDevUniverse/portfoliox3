@@ -1,0 +1,143 @@
+// -------------- Menu Btn
+.menu-btn {
+    position: absolute;
+    z-index: 2;
+    right: 4%;
+    bottom: 0;
+    @include max-width (1169px){bottom: 1rem}
+    @include max-width (769px){bottom: 2rem}
+    @include max-width (650px){bottom: 3rem}
+    cursor: pointer;
+    @include ease-out;
+
+    .btn-line {
+        width: 3.5rem;
+        height: .3rem;
+        margin: 0 0 5px 0;
+        background: #fff;
+        @include ease-out;
+        @include box-shadow(-5px 5px 50px .1px #000);
+        &:nth-child(2){width: 2.3rem;}
+        &:nth-child(4){width: 3rem;}
+    }
+
+    // ---------------------- Rotate the menu lines into X
+    &.close {
+        @include transform (rotate(180deg));
+
+        .btn-line {
+            // line 1 Hide
+            &:nth-child(1){
+                @include opacity(0);
+                background-color: $secondary_color;
+                @include box-shadow (0 0 10px 5px $secondary_color);
+            }
+            // line 2 Rotate
+            &:nth-child(2){
+                @include transform (rotate(45deg) translate(4px, 4px));
+                width: 3.5rem;
+            }
+            // line 3 Rotate
+            &:nth-child(3){
+                @include transform (rotate(-405deg) translate(3px, -2px));
+            }
+            // line 4 Hide 
+            &:nth-child(4){
+                @include opacity(0);
+                background-color: $secondary_color;
+                @include box-shadow (0 0 10px 5px $secondary_color);
+                width: 3.5rem;
+            }
+        }
+    }
+}
+
+// ------------ Menu
+.menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+    overflow: hidden;
+
+    &.show {
+        visibility: visible;
+    }
+
+    &-brand, &-nav {
+        @include flex (column, center, center);
+        float: left;
+        width: 50%;
+        height: 100vh;
+    }
+    &-nav {
+        margin: 0;
+        padding: 0;
+        background: rgba(darken($primary_color, 3), .9);
+        list-style: none;
+        @include transform (translate3d(0, -100%, 0));
+        @include ease-out;
+        @include opacity(0);
+
+        &.show {
+            // slid it from top
+            @include transform (translate3d(0, 0, 0));
+            @include opacity(1);
+        }
+    }
+
+    &-brand {
+        background: rgba($primary_color, .9);
+        @include transform (translate3d(0, 100%, 0));
+        @include ease-out;
+        @include opacity(0);
+
+        &.show {
+            @include transform (translate3d(0, 0, 0));
+            @include opacity(1);
+        }
+
+        .photo {
+            @include size-box(25rem);
+            @include max-width(700px){@include size-box(18rem);}
+            @include max-width(480px){@include size-box(12rem);}
+            @include radius (100%);
+            border: 4px double $secondary_color;
+            overflow: hidden;
+
+            img {max-width: 110%;}
+        }
+    }
+
+    .nav-item {
+        @include transform (translate3d(100rem, 0, 0));
+        @include ease-out;
+
+        &.show {
+            // slide it from right
+            @include transform (translate3d(0rem, 0, 0));
+        }
+
+        .nav-link {
+            display: inline-block;
+            position: relative;
+            font-size: 3rem;
+            font-weight: 300;
+            padding: 1.6rem 0;
+            color: #fff;
+            text-decoration: none;
+            @include ease-out;
+
+            &:hover {color: $secondary_color;}
+        }
+        .current {
+            color: $secondary_color;
+        }
+    }
+}
+// Delay each nav item slide by 130ms
+@for $x from 1 through 4 {
+    .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * 100ms;
+    }
+}

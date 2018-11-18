@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-x3",
+  "version": "1.0.0",
+  "description": "Portfolio-x3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w dist/scss/ -o dist/css/ --recursive"
+  },
+  "author": "Sharafat Ali",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "node-sass": "^4.10.0"
+  }
+}

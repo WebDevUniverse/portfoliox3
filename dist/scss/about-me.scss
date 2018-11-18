@@ -1,0 +1,86 @@
+#about-me {    
+    position: relative;
+    background-image: linear-gradient(to right, $primary_color, rgba($primary_color, 0.7)),
+    url(../imgs/bg-about.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+    overflow: hidden;
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+    }
+
+    .lg-heading {
+        font-size: 9rem;
+        padding-left: 5%;
+        padding-top: 7rem;
+        @include max-width(1369px){font-size: 8rem;}
+        @include max-width(580px){font-size: 7rem; text-align: center}
+        @include max-width(380px){font-size: 6rem;}
+    }
+    .sm-heading {
+        padding-left: 5.1%;
+        @include max-width(1369px){font-size: 2rem;}
+        @include max-width(580px){font-size: 1.7rem; text-align: center}
+    }
+
+    .container {
+        max-width: 100rem;
+        margin: 0 auto;
+        margin-top: 19vh;
+        padding: 1rem;
+        text-shadow:0px 6px 16px #000000;
+        @include flex(row-reverse, center, center);
+
+        @include max-width(900px){@include flex(column, center, center); margin-top: 1rem;}
+
+        .image {
+            min-width: 20rem;
+            max-width: 22rem;
+            @include max-width(640px){ min-width: 15rem; width: 17rem;}            
+            border: 3px double darken($secondary_color, 15%);
+            @include radius(2rem 0 2rem 0);
+            overflow: hidden;
+            @include flex(row, center, center);
+            @include box-shadow(-5px 5px 10px .1px rgba(0, 0, 0, 0.527));
+
+            img {max-width: 100%;}
+        }
+        .text-about-me {
+            @include flex(column, center, flex-end);
+
+            @include max-width(900px){ @include flex(column, center, center); margin-top: 1rem; }
+            
+            padding: 0 2%;
+            letter-spacing: .1px;
+            line-height: 1.3;
+            font-size: 2.8rem;
+            @include max-width(640px){ font-size: 2.5rem; }
+            @include max-width(425px){ font-size: 2.2rem; }
+            z-index: 1;
+            color: $main-text-color;
+            
+            h4 {
+                color: $secondary_color;
+                font-weight: 600;
+                letter-spacing: .5px;
+                font-size: 110%;
+            }
+
+            p {
+                text-align: right;
+                font-weight: 300;
+                @include max-width(900px){text-align: center;}
+            }
+        }
+    }
+
+
+
+
+}

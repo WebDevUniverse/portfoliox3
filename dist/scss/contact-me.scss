@@ -54,9 +54,13 @@
                 @include size-box(5rem);
                 @include flex(row, center, center);
                 font-size: 180%;
-                @include max-width(480px){ font-size: 2.4rem; @include size-box(3rem);}
                 color: $secondary_color;
-                @include ease-out-duration(300ms);             
+                @include ease-out-duration(300ms);
+                
+                @include max-width(640px){
+                    font-size: 2.4rem;
+                    @include size-box(3rem);
+                }
             }
             .cell-number, .address, .email, .git {
                 font-size: 2.5rem;

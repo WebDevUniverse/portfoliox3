@@ -5,17 +5,21 @@
     $cubeAnimateTime: 30s;
     $CubeSizeHalf: $cubeSize / 2; 
 
-    $sizethis: 17vw;
     z-index: 0;
     position: absolute;
     right: 12%;
-    // @include max-width(1180px){right: 10vw;}
-    @include max-width(769px){@include center(both); padding-bottom: 30rem;}
-    
-
     @include size-box ($cubeSize);
     @include flex (row, center,center);
     perspective: 80rem;
+
+    @include max-width(769px){
+        @include center(both);
+        padding-bottom: 30rem;
+    }
+    @include max-width(640px){display: none;}
+
+
+
 
    .cube {
     @include size-box ($cubeSize);

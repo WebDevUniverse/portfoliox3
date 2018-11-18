@@ -38,7 +38,7 @@
 
         .row {
             @include flex(row);
-            width: 60rem;
+            width: 62rem;
             margin: 0 auto;
 
             @include max-width(640px){

@@ -34,8 +34,13 @@ menuBtn.addEventListener('click', function(){
 
 
 // -------------------------------------------------- Cube 3D
-// var loading = document.querySelector(".cube .front");
-// var cubeBack = document.querySelector(".cube .back");
+const loading = document.querySelector(".cube .front");
+const cubeBack = document.querySelector(".cube .back");
+const cubeLeft = document.querySelector(".cube .left");
+const cubeRight = document.querySelector(".cube .right");
+const cubeTop = document.querySelector(".cube .top");
+const cubeBottom = document.querySelector(".cube .bottom");
+
 
 // ld = 0;
 // var mytimer = setInterval(loadding, 100);
@@ -52,3 +57,25 @@ menuBtn.addEventListener('click', function(){
 //         cubeBack.style.display = 'none';
 //     }
 // }
+const progs = ['Html5 <br> <em>85%</em>', 'Css3 <br> <em>90%</em>', "J.S <br> <em>38%</em>", "Sass <br> <em>92%</em>", "Node.Js <br> <em>33%</em>", "Github <br> <em>51%</em>", "Jquery <br> <em>21%</em>", "Php <br> 3%"];
+var mytimer = setInterval(loadd, 1500);
+
+pi = 0;
+function loadd (){
+    if(pi == progs.length){
+        // clearInterval(mytimer);
+        // loading.innerHTML = "End Arrey";
+        loading.innerHTML = `<span style="font-weight: bold; font-style: italic"> ${pi} </span>`;
+        cubeBack.style.display = 'flex';
+        pi = -1;
+    }
+    else{
+        pi++;
+        loading.innerHTML = `<span> ${progs[pi]} </span>`;
+        cubeBack.innerHTML = `<span> ${progs[pi]} </span>`;
+        cubeLeft.innerHTML = `<span> ${progs[pi]} </span>`;
+        cubeRight.innerHTML = `<span> ${progs[pi]} </span>`;
+        cubeTop.innerHTML = `<span> ${progs[pi]} </span>`;
+        cubeBottom.innerHTML = `<span> ${progs[pi]} </span>`;        
+    }
+}

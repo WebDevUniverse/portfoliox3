@@ -16,7 +16,7 @@
         margin: 0 0 5px 0;
         background: #fff;
         @include ease-out;
-        @include box-shadow(-5px 5px 50px .1px #000);
+        @include box-shadow(-5px 5px 5px .1px #000);
         &:nth-child(2){width: 2.3rem;}
         &:nth-child(4){width: 3rem;}
     }
@@ -24,28 +24,30 @@
     // ---------------------- Rotate the menu lines into X
     &.close {
         @include transform (rotate(180deg));
-
+        
         .btn-line {
             // line 1 Hide
             &:nth-child(1){
                 @include opacity(0);
                 background-color: $secondary_color;
-                @include box-shadow (0 0 10px 5px $secondary_color);
+                @include box-shadow(-5px 5px 5px .1px #000);
             }
             // line 2 Rotate
             &:nth-child(2){
                 @include transform (rotate(45deg) translate(4px, 4px));
                 width: 3.5rem;
+                @include box-shadow(none);
             }
             // line 3 Rotate
             &:nth-child(3){
                 @include transform (rotate(-405deg) translate(3px, -2px));
+                @include box-shadow(none);
             }
             // line 4 Hide 
             &:nth-child(4){
                 @include opacity(0);
                 background-color: $secondary_color;
-                @include box-shadow (0 0 10px 5px $secondary_color);
+                @include box-shadow(-5px 5px 5px .1px #000);
                 width: 3.5rem;
             }
         }

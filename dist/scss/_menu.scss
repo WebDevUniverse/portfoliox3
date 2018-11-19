@@ -100,11 +100,13 @@
         }
 
         .photo {
+            @include flex(row, center, center);
             @include size-box(25rem);
             @include max-width(700px){@include size-box(18rem);}
             @include max-width(480px){@include size-box(12rem);}
-            @include radius (100%);
-            border: 4px double $secondary_color;
+            @include radius (20%);
+            border-bottom: 4px double $secondary_color;
+            border-top: 4px double $secondary_color;
             overflow: hidden;
 
             img {max-width: 110%;}

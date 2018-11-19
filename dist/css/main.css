@@ -446,7 +446,7 @@
     justify-content: flex-start;
     align-items: baseline;
     overflow: hidden;
-    height: 100vh; }
+    padding-bottom: 6rem; }
     @media (max-width: 769px) {
       #skills .languages {
         text-align: center;
@@ -454,12 +454,6 @@
         flex-flow: column;
         justify-content: center;
         align-items: center; } }
-    @media (max-width: 869px) {
-      #skills .languages {
-        height: 160vh; } }
-    @media (max-width: 550px) {
-      #skills .languages {
-        height: 300vh; } }
     #skills .languages .progress-container {
       width: 100%;
       display: flex;
@@ -3021,20 +3015,17 @@
     #about-me .container .image {
       min-width: 20rem;
       max-width: 22rem;
-      border-top: 3px double #f5d000;
-      border-bottom: 3px double #f5d000;
-      border-radius: 2rem 0 2rem 0;
-      -ms-border-radius: 2rem 0 2rem 0;
-      -moz-border-radius: 2rem 0 2rem 0;
-      -webkit-border-radius: 2rem 0 2rem 0;
+      border-left: 3px double #f5d000;
+      border-bottom: 4px double #f5d000;
+      border-radius: 4rem 0 4rem 0;
+      -ms-border-radius: 4rem 0 4rem 0;
+      -moz-border-radius: 4rem 0 4rem 0;
+      -webkit-border-radius: 4rem 0 4rem 0;
       overflow: hidden;
       display: flex;
       flex-flow: row;
       justify-content: center;
-      align-items: center;
-      -webkit-box-shadow: -5px 5px 10px 0.1px rgba(0, 0, 0, 0.527);
-      -moz-box-shadow: -5px 5px 10px 0.1px rgba(0, 0, 0, 0.527);
-      box-shadow: -5px 5px 10px 0.1px rgba(0, 0, 0, 0.527); }
+      align-items: center; }
       @media (max-width: 900px) {
         #about-me .container .image {
           width: 18rem;

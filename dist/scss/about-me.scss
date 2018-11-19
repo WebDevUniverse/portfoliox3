@@ -49,12 +49,13 @@
             @include max-width(900px){ width: 18rem; min-width: 14rem;}
             @include max-width(640px){ width: 15rem; } 
             @include max-width(480px){ width: 13rem; }             
-            border-top: 3px double darken($secondary_color, 15%);
-            border-bottom: 3px double darken($secondary_color, 15%);
-            @include radius(2rem 0 2rem 0);
+            // border-top: 3px double darken($secondary_color, 15%);
+            border-left: 3px double darken($secondary_color, 15%);
+            border-bottom: 4px double darken($secondary_color, 15%);
+            @include radius(4rem 0 4rem 0);
             overflow: hidden;
             @include flex(row, center, center);
-            @include box-shadow(-5px 5px 10px .1px rgba(0, 0, 0, 0.527));
+            // @include box-shadow(-5px 5px 10px .1px rgba(0, 0, 0, 0.527));
 
             img {max-width: 100%;}
         }

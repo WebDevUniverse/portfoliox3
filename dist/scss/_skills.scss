@@ -26,8 +26,8 @@
         @include max-width (769px){text-align: center; @include flex (column, center, center);}
         overflow: hidden;
         height: 100vh;
-        @include max-width (869px){height: 130vh;}
-        @include max-width (550px){height: 220vh;}
+        @include max-width (869px){height: 160vh;}
+        @include max-width (550px){height: 300vh;}
 
         .progress-container {
             width: 100%;

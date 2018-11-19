@@ -1,1 +1,2 @@
-*.docx    binary
+# it will let docx file be allowed to git pages published, else error accures
+*.docx    binary 

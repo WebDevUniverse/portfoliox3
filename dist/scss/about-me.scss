@@ -20,7 +20,7 @@
         padding-left: 5%;
         padding-top: 7rem;
         @include max-width(1369px){font-size: 8rem;}
-        @include max-width(580px){font-size: 7rem; text-align: center}
+        @include max-width(580px){font-size: 7rem; text-align: center; padding-left: 0;}
         @include max-width(380px){font-size: 6rem;}
     }
     .sm-heading {

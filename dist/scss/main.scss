@@ -71,6 +71,9 @@ a {
         bottom: 0;
         @include ease-out;
         &:hover{ border: 2px solid $secondary_color; }
+        @include max-width (1169px){bottom: 1rem; right: 9rem;}
+        @include max-width (769px){bottom: 2rem; right: 8rem;}
+        @include max-width (650px){bottom: 3rem; right: 7rem;}
         
         a{
             @include size-box(100%);
@@ -101,7 +104,6 @@ a {
         @include flex (column, center, flex-start);
         @include max-width(769px){
         @include flex (column, center, center);
-
         }   
 
         .lg-heading{

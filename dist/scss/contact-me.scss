@@ -12,7 +12,7 @@
         padding-left: 5%;
         padding-top: 7rem;
         @include max-width(1369px){font-size: 8rem;}
-        @include max-width(580px){font-size: 7rem; text-align: center}
+        @include max-width(580px){font-size: 7rem; text-align: center; padding-left: 0;}
         @include max-width(380px){font-size: 6rem;}
     }
     .sm-heading {
@@ -44,10 +44,10 @@
             @include max-width(640px){
                 @include flex(column, center, center);
                 width: auto;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
                 text-align: center;
                 padding: 0 1rem;
-            
+                border-bottom: 1px solid grey;
             }
             
             .fas, .far, .fab {
@@ -59,7 +59,7 @@
                 
                 @include max-width(640px){
                     font-size: 2.4rem;
-                    @include size-box(3rem);
+                    @include size-box(2rem);
                 }
             }
             .cell-number, .address, .email, .git {

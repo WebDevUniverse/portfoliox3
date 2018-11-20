@@ -104,12 +104,12 @@
             @include size-box(25rem);
             @include max-width(700px){@include size-box(18rem);}
             @include max-width(480px){@include size-box(12rem);}
-            @include radius (20%);
+            @include radius (30% 0 30% 0);
             border-bottom: 4px double $secondary_color;
             border-top: 4px double $secondary_color;
             overflow: hidden;
 
-            img {max-width: 110%;}
+            img {max-width: 100%;}
         }
     }
 

@@ -130,10 +130,10 @@
       align-items: center;
       width: 25rem;
       height: 25rem;
-      border-radius: 20%;
-      -ms-border-radius: 20%;
-      -moz-border-radius: 20%;
-      -webkit-border-radius: 20%;
+      border-radius: 30% 0 30% 0;
+      -ms-border-radius: 30% 0 30% 0;
+      -moz-border-radius: 30% 0 30% 0;
+      -webkit-border-radius: 30% 0 30% 0;
       border-bottom: 4px double #ffe342;
       border-top: 4px double #ffe342;
       overflow: hidden; }
@@ -146,7 +146,7 @@
           width: 12rem;
           height: 12rem; } }
       .menu-brand .photo img {
-        max-width: 110%; }
+        max-width: 100%; }
   .menu .nav-item {
     -webkit-transform: translate3d(100rem, 0, 0);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */

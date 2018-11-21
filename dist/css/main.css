@@ -2644,11 +2644,11 @@
       border: 0.91667rem solid transparent; }
     .skill-php .back .to_25 {
       border-top: 0.91667rem solid #cc3a0e;
-      -webkit-transform: rotate(25.2deg);
+      -webkit-transform: rotate(61.2deg);
       /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-      -ms-transform: rotate(25.2deg);
+      -ms-transform: rotate(61.2deg);
       /* IE 9 */
-      transform: rotate(25.2deg);
+      transform: rotate(61.2deg);
       -webkit-animation: phpp 2s linear infinite;
       -moz-animation: phpp 2s linear infinite;
       -ms-animation: phpp 2s linear infinite;
@@ -2657,43 +2657,43 @@
 
 @-webkit-keyframes phpp {
   90% {
-    -webkit-transform: rotate(17.2deg);
+    -webkit-transform: rotate(53.2deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(17.2deg);
+    -ms-transform: rotate(53.2deg);
     /* IE 9 */
-    transform: rotate(17.2deg); } }
+    transform: rotate(53.2deg); } }
 
 @-moz-keyframes phpp {
   90% {
-    -webkit-transform: rotate(17.2deg);
+    -webkit-transform: rotate(53.2deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(17.2deg);
+    -ms-transform: rotate(53.2deg);
     /* IE 9 */
-    transform: rotate(17.2deg); } }
+    transform: rotate(53.2deg); } }
 
 @-ms-keyframes phpp {
   .skill-php .back .to_25 90% {
-    -webkit-transform: rotate(17.2deg);
+    -webkit-transform: rotate(53.2deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(17.2deg);
+    -ms-transform: rotate(53.2deg);
     /* IE 9 */
-    transform: rotate(17.2deg); } }
+    transform: rotate(53.2deg); } }
 
 @-o-keyframes phpp {
   90% {
-    -webkit-transform: rotate(17.2deg);
+    -webkit-transform: rotate(53.2deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(17.2deg);
+    -ms-transform: rotate(53.2deg);
     /* IE 9 */
-    transform: rotate(17.2deg); } }
+    transform: rotate(53.2deg); } }
 
 @keyframes phpp {
   90% {
-    -webkit-transform: rotate(17.2deg);
+    -webkit-transform: rotate(53.2deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(17.2deg);
+    -ms-transform: rotate(53.2deg);
     /* IE 9 */
-    transform: rotate(17.2deg); } }
+    transform: rotate(53.2deg); } }
     .skill-php .back .to_50 {
       border-top: 0.91667rem solid #333333;
       -webkit-transform: rotate(0deg);

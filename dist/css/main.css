@@ -1221,118 +1221,14 @@
     transform: rotate(82deg); } }
     .skill-js .back .to_50 {
       border-top: 0.91667rem solid #20a869;
-      -webkit-transform: rotate(180deg);
+      -webkit-transform: rotate(140.4deg);
       /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-      -ms-transform: rotate(180deg);
+      -ms-transform: rotate(140.4deg);
       /* IE 9 */
-      transform: rotate(180deg);
+      transform: rotate(140.4deg);
       -webkit-box-shadow: 0px 0px 10px 5px inset black;
       -moz-box-shadow: 0px 0px 10px 5px inset black;
       box-shadow: 0px 0px 10px 5px inset black;
-      -webkit-animation: none 2s linear infinite;
-      -moz-animation: none 2s linear infinite;
-      -ms-animation: none 2s linear infinite;
-      -o-animation: none 2s linear infinite;
-      animation: none 2s linear infinite; }
-
-@-webkit-keyframes none {
-  90% {
-    -webkit-transform: rotate(172deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(172deg);
-    /* IE 9 */
-    transform: rotate(172deg); } }
-
-@-moz-keyframes none {
-  90% {
-    -webkit-transform: rotate(172deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(172deg);
-    /* IE 9 */
-    transform: rotate(172deg); } }
-
-@-ms-keyframes none {
-  .skill-js .back .to_50 90% {
-    -webkit-transform: rotate(172deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(172deg);
-    /* IE 9 */
-    transform: rotate(172deg); } }
-
-@-o-keyframes none {
-  90% {
-    -webkit-transform: rotate(172deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(172deg);
-    /* IE 9 */
-    transform: rotate(172deg); } }
-
-@keyframes none {
-  90% {
-    -webkit-transform: rotate(172deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(172deg);
-    /* IE 9 */
-    transform: rotate(172deg); } }
-    .skill-js .back .to_75 {
-      border-top: 0.91667rem solid #20a869;
-      -webkit-transform: rotate(270deg);
-      /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-      -ms-transform: rotate(270deg);
-      /* IE 9 */
-      transform: rotate(270deg);
-      -webkit-animation: none 2s linear infinite;
-      -moz-animation: none 2s linear infinite;
-      -ms-animation: none 2s linear infinite;
-      -o-animation: none 2s linear infinite;
-      animation: none 2s linear infinite; }
-
-@-webkit-keyframes none {
-  90% {
-    -webkit-transform: rotate(262deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(262deg);
-    /* IE 9 */
-    transform: rotate(262deg); } }
-
-@-moz-keyframes none {
-  90% {
-    -webkit-transform: rotate(262deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(262deg);
-    /* IE 9 */
-    transform: rotate(262deg); } }
-
-@-ms-keyframes none {
-  .skill-js .back .to_75 90% {
-    -webkit-transform: rotate(262deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(262deg);
-    /* IE 9 */
-    transform: rotate(262deg); } }
-
-@-o-keyframes none {
-  90% {
-    -webkit-transform: rotate(262deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(262deg);
-    /* IE 9 */
-    transform: rotate(262deg); } }
-
-@keyframes none {
-  90% {
-    -webkit-transform: rotate(262deg);
-    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(262deg);
-    /* IE 9 */
-    transform: rotate(262deg); } }
-    .skill-js .back .to_100 {
-      border-top: 0.91667rem solid #20a869;
-      -webkit-transform: rotate(313.2deg);
-      /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-      -ms-transform: rotate(313.2deg);
-      /* IE 9 */
-      transform: rotate(313.2deg);
       -webkit-animation: jss 2s linear infinite;
       -moz-animation: jss 2s linear infinite;
       -ms-animation: jss 2s linear infinite;
@@ -1341,43 +1237,147 @@
 
 @-webkit-keyframes jss {
   90% {
-    -webkit-transform: rotate(305.2deg);
+    -webkit-transform: rotate(132.4deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(305.2deg);
+    -ms-transform: rotate(132.4deg);
     /* IE 9 */
-    transform: rotate(305.2deg); } }
+    transform: rotate(132.4deg); } }
 
 @-moz-keyframes jss {
   90% {
-    -webkit-transform: rotate(305.2deg);
+    -webkit-transform: rotate(132.4deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(305.2deg);
+    -ms-transform: rotate(132.4deg);
     /* IE 9 */
-    transform: rotate(305.2deg); } }
+    transform: rotate(132.4deg); } }
 
 @-ms-keyframes jss {
-  .skill-js .back .to_100 90% {
-    -webkit-transform: rotate(305.2deg);
+  .skill-js .back .to_50 90% {
+    -webkit-transform: rotate(132.4deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(305.2deg);
+    -ms-transform: rotate(132.4deg);
     /* IE 9 */
-    transform: rotate(305.2deg); } }
+    transform: rotate(132.4deg); } }
 
 @-o-keyframes jss {
   90% {
-    -webkit-transform: rotate(305.2deg);
+    -webkit-transform: rotate(132.4deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(305.2deg);
+    -ms-transform: rotate(132.4deg);
     /* IE 9 */
-    transform: rotate(305.2deg); } }
+    transform: rotate(132.4deg); } }
 
 @keyframes jss {
   90% {
-    -webkit-transform: rotate(305.2deg);
+    -webkit-transform: rotate(132.4deg);
     /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-    -ms-transform: rotate(305.2deg);
+    -ms-transform: rotate(132.4deg);
     /* IE 9 */
-    transform: rotate(305.2deg); } }
+    transform: rotate(132.4deg); } }
+    .skill-js .back .to_75 {
+      border-top: 0.91667rem solid #333333;
+      -webkit-transform: rotate(0deg);
+      /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: rotate(0deg);
+      /* IE 9 */
+      transform: rotate(0deg);
+      -webkit-animation: none 2s linear infinite;
+      -moz-animation: none 2s linear infinite;
+      -ms-animation: none 2s linear infinite;
+      -o-animation: none 2s linear infinite;
+      animation: none 2s linear infinite; }
+
+@-webkit-keyframes none {
+  90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+
+@-moz-keyframes none {
+  90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+
+@-ms-keyframes none {
+  .skill-js .back .to_75 90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+
+@-o-keyframes none {
+  90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+
+@keyframes none {
+  90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+    .skill-js .back .to_100 {
+      border-top: 0.91667rem solid #333333;
+      -webkit-transform: rotate(0deg);
+      /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+      -ms-transform: rotate(0deg);
+      /* IE 9 */
+      transform: rotate(0deg);
+      -webkit-animation: none 2s linear infinite;
+      -moz-animation: none 2s linear infinite;
+      -ms-animation: none 2s linear infinite;
+      -o-animation: none 2s linear infinite;
+      animation: none 2s linear infinite; }
+
+@-webkit-keyframes none {
+  90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+
+@-moz-keyframes none {
+  90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+
+@-ms-keyframes none {
+  .skill-js .back .to_100 90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+
+@-o-keyframes none {
+  90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
+
+@keyframes none {
+  90% {
+    -webkit-transform: rotate(-8deg);
+    /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-8deg);
+    /* IE 9 */
+    transform: rotate(-8deg); } }
 
 .skill-sass {
   width: 11rem;

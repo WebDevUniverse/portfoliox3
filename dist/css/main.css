@@ -413,7 +413,8 @@
 #skills {
   background-image: linear-gradient(to right, #444, rgba(68, 68, 68, 0.85)), url(../imgs/bg-skills.jpg);
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  height: 200rem; }
   #skills .lg-heading {
     font-size: 9rem;
     padding-left: 5%;

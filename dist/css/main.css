@@ -3403,7 +3403,6 @@
         text-align: center; } }
   #contact-me .container {
     width: 100%;
-    min-height: 28rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -3414,12 +3413,12 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1rem 0;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
     margin-top: 7rem;
-    -webkit-box-shadow: 0 5px 30px 0.1px #000;
-    -moz-box-shadow: 0 5px 30px 0.1px #000;
-    box-shadow: 0 5px 30px 0.1px #000; }
+    -webkit-box-shadow: 0 5px 10px 0.1px #000;
+    -moz-box-shadow: 0 5px 10px 0.1px #000;
+    box-shadow: 0 5px 10px 0.1px #000; }
     @media (max-width: 640px) {
       #contact-me .container {
         background: none;

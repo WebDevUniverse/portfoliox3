@@ -27,12 +27,14 @@ body {
     background-color: $primary_color;
     color: $main-text-color;
     height: 100%;
-    width: 100%; 
+    width: 100%;
     margin: 0 auto;
-    line-height: 1.5; 
+    line-height: 1.5;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 400;
     margin: 0;
     padding: 0;
@@ -40,18 +42,21 @@ h1, h2, h3 {
     &.lg-heading {
         font-size: 9.6rem;
         line-height: 1.2;
-        text-shadow:0px 6px 16px #000000;
+        text-shadow: 0px 6px 16px #000000;
     }
+
     &.sm-heading {
         margin-bottom: 1.5rem;
         padding: 0.5rem 1.6rem 0.5rem 0;
-        text-shadow:0px 6px 16px #000000;
+        text-shadow: 0px 6px 16px #000000;
     }
 }
+
 a {
     color: #fff;
     text-decoration: none;
 }
+
 // ------------------------------------------------------- Header
 .main-header {
     z-index: 2;
@@ -70,17 +75,35 @@ a {
         right: 8%;
         bottom: 0;
         @include ease-out;
-        &:hover{ border: 2px solid $secondary_color; }
-        @include max-width (1169px){bottom: 1rem; right: 9rem;}
-        @include max-width (769px){bottom: 2rem; right: 8rem;}
-        @include max-width (650px){bottom: 3rem; right: 7rem;}
-        
-        a{
+
+        &:hover {
+            border: 2px solid $secondary_color;
+        }
+
+        @include max-width (1169px) {
+            bottom: 1rem;
+            right: 9rem;
+        }
+
+        @include max-width (769px) {
+            bottom: 2rem;
+            right: 8rem;
+        }
+
+        @include max-width (650px) {
+            bottom: 3rem;
+            right: 7rem;
+        }
+
+        a {
             @include size-box(100%);
-            @include flex(row, center, center); 
+            @include flex(row, center, center);
             font-weight: 600;
             letter-spacing: 1px;
-            &:hover{color: $secondary_color}
+
+            &:hover {
+                color: $secondary_color
+            }
         }
     }
 }
@@ -92,7 +115,7 @@ a {
 // --------------------------------------------------------------------- Sections
 #home {
     background-image: linear-gradient(to right, $primary_color, rgba($primary_color, .9)),
-    url(../imgs/bg-main.jpg);
+        url(../imgs/bg-main.jpg);
     background-position: top;
     background-size: cover;
 
@@ -102,22 +125,39 @@ a {
         margin: 0 auto;
         height: 100vh;
         @include flex (column, center, flex-start);
-        @include max-width(769px){
-        @include flex (column, center, center);
-        }   
 
-        .lg-heading{
-            @include max-width(1369px){font-size: 8rem;}
-            @include max-width(580px){font-size: 7rem; text-align: center}
-            @include max-width(380px){font-size: 6rem;}
-        }
-        .sm-heading{
-            @include max-width(1369px){font-size: 2rem;}
-            @include max-width(580px){font-size: 1.7rem; text-align: center}
+        @include max-width(769px) {
+            @include flex (column, center, center);
         }
 
-        .fab{
-            @include max-width(1369px){
+        .lg-heading {
+            @include max-width(1369px) {
+                font-size: 8rem;
+            }
+
+            @include max-width(580px) {
+                font-size: 7rem;
+                text-align: center
+            }
+
+            @include max-width(380px) {
+                font-size: 6rem;
+            }
+        }
+
+        .sm-heading {
+            @include max-width(1369px) {
+                font-size: 2rem;
+            }
+
+            @include max-width(580px) {
+                font-size: 1.7rem;
+                text-align: center
+            }
+        }
+
+        .fab {
+            @include max-width(1369px) {
                 font-size: 1.5rem;
                 @include size-box(2.5rem);
             }
@@ -126,16 +166,16 @@ a {
 }
 
 .icons {
-    @include flex (row nowrap, center, center);        
+    @include flex (row nowrap, center, center);
 
     a {
         border: 1px solid transparent;
-        
+
         .fab {
             @include size-box(3rem);
             @include flex (row nowrap, center, center);
             font-size: 2rem;
-            text-shadow:0px 6px 16px #000000;
+            text-shadow: 0px 6px 16px #000000;
         }
 
         &:hover {
@@ -145,4 +185,3 @@ a {
         }
     }
 }
-

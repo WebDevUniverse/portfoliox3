@@ -59,7 +59,7 @@ const cubeBottom = document.querySelector(".cube .bottom");
 // }
 
 // ---------------------------- 3D cube text changing scirpt
-const progs = ['Html5 <br> <em>85%</em>', 'Css3 <br> <em>90%</em>', "J.S <br> <em>38%</em>", "Sass <br> <em>92%</em>", "Node.Js <br> <em>45%</em>", "Github <br> <em>65%</em>", "Jquery <br> <em>27%</em>", "Php <br> 17%"];
+const progs = ['Html5 <br> <em>90%</em>', 'Css3 <br> <em>95%</em>', "J.S <br> <em>39%</em>", "Sass <br> <em>92%</em>", "Node.Js <br> <em>44%</em>", "Github <br> <em>75%</em>", "Jquery <br> <em>50%</em>", "Php <br> 17%"];
 var mytimer = setInterval(loadd, 1500);
 
 pi = 0;

@@ -60,7 +60,7 @@ const cubeBottom = document.querySelector(".cube .bottom");
 
 // ---------------------------- 3D cube text changing scirpt
 const progs = ['100% Mature in Webs', 'Html5, CSS3, SASS', 'JavaScript, JQuery', 'Custom UI Design', 'Any Design or PSD Mockup', 'Custom WordPress', 'Custom Shopify', 'HTML CSS SASS', 'SEO Expert', 'Graphics Designer', 'Digital Marketer', 'Funnel & Campaigns', 'Leads and Sales'];
-var mytimer = setInterval(loadd, 1000);
+var mytimer = setInterval(loadd, 1500);
 
 pi = 0;
 function loadd (){

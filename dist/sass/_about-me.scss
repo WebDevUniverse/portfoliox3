@@ -50,8 +50,8 @@
             @include max-width(640px){ width: 15rem; } 
             @include max-width(480px){ width: 13rem; }             
             // border-top: 3px double darken($secondary_color, 15%);
-            border-left: 3px double darken($secondary_color, 15%);
-            border-bottom: 4px double darken($secondary_color, 15%);
+            // border-left: 3px double darken($secondary_color, 15%);
+            // border-bottom: 4px double darken($secondary_color, 15%);
             @include radius(4rem 0 4rem 0);
             overflow: hidden;
             @include flex(row, center, center);

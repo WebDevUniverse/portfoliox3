@@ -193,7 +193,7 @@
   @media (max-width: 1280px) {
     .cube-3d-container {
       padding: 0px;
-      padding-bottom: 10rem; } }
+      padding-bottom: 7rem; } }
   .cube-3d-container .cube {
     width: 15vw;
     height: 15vw;
@@ -3752,20 +3752,18 @@
   flex-flow: row nowrap;
   justify-content: inherit;
   align-items: center; }
-  .icons a {
-    margin: 5px; }
-    .icons a i {
-      width: 2rem;
-      height: 2rem;
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-      text-shadow: 0px 6px 16px #000000; }
-    .icons a:hover {
-      color: #ffe342;
-      border-bottom: 1px outset #ffe342;
-      transition: all 0.5s ease-in-out; }
+  .icons a i {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px 6px 16px #000000; }
+  .icons a:hover {
+    color: #ffe342;
+    border-bottom: 1px outset #ffe342;
+    transition: all 0.5s ease-in-out; }
 
 * {
   margin: 0;

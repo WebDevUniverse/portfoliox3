@@ -59,15 +59,15 @@ const cubeBottom = document.querySelector(".cube .bottom");
 // }
 
 // ---------------------------- 3D cube text changing scirpt
-const progs = ['100% Mature in Webs', 'Html5, CSS3, SASS', 'JavaScript, JQuery', 'Custom UI Design', 'Any Design or PSD Mockup', 'Custom WordPress', 'Custom Shopify', 'HTML CSS SASS', 'SEO Expert', 'Graphics Designer', 'Digital Marketer', 'Funnel & Campaigns', 'Leads and Sales'];
-var mytimer = setInterval(loadd, 1500);
+const progs = ['100% Mature in Webs', 'Html5, CSS3, SASS', 'JavaScript, JQuery', 'Custom UI Design', 'Any Design or PSD Mockup', 'Custom WordPress', 'Custom Shopify', 'SEO Expert', 'Graphics Designer', 'Digital Marketer', 'Funnel & Campaigns', 'Leads and Sales'];
+var mytimer = setInterval(loadd, 2000);
 
 pi = 0;
 function loadd (){
     if(pi == progs.length){
         // clearInterval(mytimer);
         // loading.innerHTML = "End Arrey";
-        loading.innerHTML = `<span style="font-weight: bold; font-style: italic"> ${pi} </span>`;
+        loading.innerHTML = `<span> ${pi} </span>`;
         cubeBack.style.display = 'flex';
         pi = -1;
     }

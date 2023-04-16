@@ -3,7 +3,7 @@
     url(../imgs/bg-skills.jpg);
     background-size: cover;
     background-position: center;
-    height: 200rem;
+    padding-bottom: 50px;
 
     // ------------------ Headings
     .lg-heading {
@@ -13,7 +13,7 @@
         @include max-width (1169px){font-size: 6rem}
         @include max-width (769px){font-size: 5rem; padding-left: 0;}
         @include max-width (650px){text-align: center;}
-    
+
     }
     .sm-heading {
         padding-left: 5.1%;

@@ -76,3 +76,25 @@
         }
     }
 }
+.icons {
+    @include flex (row nowrap, inherit, center);
+
+    a {
+        // border: 1px solid transparent;
+        margin: 5px;
+
+        i {
+            @include size-box(2rem);
+            @include flex (row nowrap, center, center);
+            // font-size: 2rem;
+            text-shadow: 0px 6px 16px #000000;
+        }
+
+        &:hover {
+            color: $secondary_color;
+            border-bottom: 1px outset $secondary_color;
+            @include ease-out;
+
+        }
+    }
+}

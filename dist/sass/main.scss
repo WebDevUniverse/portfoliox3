@@ -184,6 +184,7 @@ a {
             color: $secondary_color;
             border-bottom: 1px outset $secondary_color;
             @include ease-out;
+
         }
     }
 }

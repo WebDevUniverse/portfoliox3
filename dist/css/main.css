@@ -3566,10 +3566,10 @@
         text-align: center; } }
   #about-me .container {
     max-width: 100rem;
+    z-index: 999999999;
     width: 100%;
     margin: 0 auto;
-    margin-top: 8%;
-    padding: 1rem;
+    margin-top: 5%;
     text-shadow: 0px 6px 16px #000000;
     display: flex;
     flex-flow: row-reverse;

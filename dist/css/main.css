@@ -3566,7 +3566,6 @@
         text-align: center; } }
   #about-me .container {
     max-width: 100rem;
-    z-index: 999999999;
     width: 100%;
     margin: 0 auto;
     margin-top: 5%;
